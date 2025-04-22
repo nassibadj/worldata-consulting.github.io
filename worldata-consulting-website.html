@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldata Consulting - Expertise en Data Governance & Transformation</title>
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #3498db;
+            --accent: #2980b9;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 9rem 0 6rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            color: var(--secondary);
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-position {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .timeline-company {
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:before {
+            content: '✓';
+            color: var(--success);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-style: italic;
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-links, .footer-contact {
+            list-style: none;
+        }
+        
+        .footer-links li, .footer-contact li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.6;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: 0.5s;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 19px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">World<span>Data</span> Consulting</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#experience">Expérience</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Transformez vos données en valeur stratégique</h1>
+            <p>WorldData Consulting accompagne les entreprises dans leur gouvernance, transformation et gestion des données pour en faire un véritable levier stratégique.</p>
+            <a href="#contact" class="btn">Contactez-nous</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+                <p>Des solutions adaptées à vos enjeux de données, de la stratégie à l'opérationnel.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="/api/placeholder/80/80" alt="Gouvernance des données" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Gouvernance des Données</h3>
+                        <p>Conception et mise en œuvre de processus de gouvernance pour une meilleure qualité, conformité et valorisation de votre patrimoine data.</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Catalogue de données</li>
+                            <li>Glossaire métier</li>
+                            <li>Dictionnaire de données</li>
+                            <li>Définition des règles CRUD</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="/api/placeholder/80/80" alt="Master Data Management" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Master Data Management</h3>
+                        <p>Implémentation de solutions MDM pour unifier et fiabiliser vos données de référence à travers l'ensemble de vos systèmes.</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Modèle de données d'entreprise (EDM)</li>
+                            <li>Golden records</li>
+                            <li>Référentiels clients, produits, etc.</li>
+                            <li>Onboarding et bascule des données</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="/api/placeholder/80/80" alt="Transformation des Données" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Transformation des Données</h3>
+                        <p>Accompagnement dans vos projets de transformation digitale centrés sur la donnée pour générer plus de valeur.</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Product Ownership data</li>
+                            <li>Gestion de projet Agile</li>
+                            <li>Conduite du changement</li>
+                            <li>Définition des KPIs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="/api/placeholder/80/80" alt="IA et Data Mining" />
+                    </div>
+                    <div class="service-content">
+                        <h3>IA et Data Mining</h3>
+                        <p>Application de techniques avancées d'analyse pour extraire de la valeur de vos données et créer des solutions prédictives.</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Analyse prédictive</li>
+                            <li>Extraction de motifs</li>
+                            <li>Analyse séquentielle</li>
+                            <li>Clustering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+                <p>Parlons de vos projets et de vos besoins</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Votre email">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Entreprise</label>
+                        <input type="text" class="form-control" id="company" placeholder="Votre entreprise">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Sujet de votre message">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" placeholder="Votre message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">World<span>Data</span> Consulting</div>
+                    <p>Expertise en gouvernance, transformation et valorisation des données d'entreprise. Des solutions sur mesure pour faire de vos données un véritable levier stratégique.</p>
+                </div>
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#experience">Expérience</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i>📞</i>
+                            <span>06 48 57 84 77</span>
+                        </li>
+                        <li>
+                            <i>✉️</i>
+                            <span>nassibadjouadi@yahoo.fr</span>
+                        </li>
+                        <li>
+                            <i>📍</i>
+                            <span>Saint-Maur-Des-Fossés, France</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WorldData Consulting. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for responsive navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Highlight active nav item on scroll
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-links a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos</h2>
+                <p>Expertise et passion au service de la valorisation de vos données</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Worldata Consulting</h3>
+                    <p>Worldata Consulting est une société de conseil spécialisée en gouvernance, transformation et gestion des données. Avec une expérience approfondie dans des secteurs variés (Logistique, Utilities, Assurance, Services Financiers), nous apportons une expertise pointue et une vision transverse pour vous aider à tirer le meilleur parti de vos données.</p>
+                    <p>Notre approche repose sur une parfaite compréhension des enjeux métiers et techniques, ainsi qu'une capacité à coordonner efficacement les différentes parties prenantes de vos projets data. En tant que point de contact privilégié entre la direction, les métiers et les équipes techniques, nous garantissons l'alignement de vos initiatives data avec vos objectifs stratégiques.</p>
+                    <p>Nos interventions s'adaptent à vos besoins, que ce soit pour la définition de votre stratégie data, l'implémentation de solutions MDM, le pilotage de projets de transformation ou l'amélioration de la qualité de vos données.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/500/400" alt="WorldData Consulting" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projets réalisés</h2>
+                <p>Des interventions concrètes au service de la valorisation des données</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-position">Mise en œuvre de solution MDM</div>
+                        <div class="timeline-company">Secteur Logistique</div>
+                        <p>Déploiement de la solution EBX, développement du référentiel client, coordination des équipes techniques et métiers, pilotage de la bascule des données.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022-2024</div>
+                        <div class="timeline-position">Gouvernance des données Groupe</div>
+                        <div class="timeline-company">Secteur Assurance</div>
+                        <p>Développement du modèle de données d'entreprise (EDM), mise en place des référentiels Groupe, production de rapports d'analyse décisionnels, onboarding des données des filiales.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021-2022</div>
+                        <div class="timeline-position">Pilotage Agile - Data Quality</div>
+                        <div class="timeline-company">Secteur Bancaire</div>
+                        <p>Animation des cérémonies Agile pour l'équipe Data Quality et Data Lineage, coordination entre équipes techniques, métiers et management pour l'amélioration des processus de qualité.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020-2021</div>
+                        <div class="timeline-position">Refonte des applications d'intervention</div>
+                        <div class="timeline-company">Utilities</div>
+                        <p>Cadrage fonctionnel et technique, déploiement et accompagnement au changement pour l'ensemble des régions, coordination avec les équipes métiers et techniques.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017-2020</div>
+                        <div class="timeline-position">Projet Relève Intelligente</div>
+                        <div class="timeline-company">Secteur Eau</div>
+                        <p>Pilotage de la refonte des applications Relève et Télémesure, mise en place d'une passerelle de flux de relève pour l'ensemble des sites en France, transition des anciennes solutions vers le nouveau système.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Compétences</h2>
+                <p>Expertise technique et fonctionnelle au service de vos projets data</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Expertise métier</h3>
+                    <ul class="skill-list">
+                        <li>Gouvernance de données</li>
+                        <li>Master Data Management</li>
+                        <li>Référentiels de données</li>
+                        <li>Data Quality</li>
+                        <li>IA et Data Mining</li>
+                        <li>Product Ownership</li>
+                        <li>Modélisation de données</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Outils & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>Oracle 11g, SQL, PL/SQL, SQL Server</li>
+                        <li>ELT Stambia, Tibco Spotfire</li>
+                        <li>IBM InfoSphere (DataStage, QualityStage)</li>
+                        <li>JIRA, Confluence, ServiceNow</li>
+                        <li>AWS, API, Lambda, Kibana</li>
+                        <li>Python, Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Méthodologies</h3>
+                    <ul class="skill-list">
+                        <li>Agile Scrum</li>
+                        <li>UML, Merise</li>
+                        <li>Gestion de projet (Build et Run)</li>
+                        <li>Data Quality Management</li>
+                        <li>Conduite du changement</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Secteurs d'expertise</h3>
+                    <ul class="skill-list">
+                        <li>Logistique (Geodis, Bolloré)</li>
+                        <li>Utilities (Veolia, Suez)</li>
+                        <li>Assurance (Europ Assistance)</li>
+                        <li>Services Financiers (Société Générale)</li>
+                        <li>Services aux Entreprises (Altares D&B)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Témoignages</h2>
+                <p>Ce que nos clients disent de nous</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Nassiba a joué un rôle clé dans la mise en place de notre référentiel client. Sa capacité à comprendre nos enjeux métiers et à fédérer les différentes parties prenantes a été déterminante dans le succès du projet.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/60/60" alt="Directeur SI" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Thomas Durand</h4>
+                            <p>Directeur SI, Secteur Logistique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>La vision stratégique et l'expertise technique de WorldData Consulting nous ont permis de transformer notre approche de la gouvernance des données. Les résultats sont tangibles en termes de qualité et de valeur ajoutée pour nos métiers.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/60/60" alt="Responsable Data" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophie Martin</h4>
+                            <p>Chief Data Officer, Secteur Assurance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>L'accompagnement de WorldData Consulting dans notre projet MDM a été remarquable. Leur expertise technique et leur compréhension fine de nos enjeux métiers ont fait toute la différence. Un vrai partenaire de confiance.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/60/60" alt="DSI" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Pierre Leroy</h4>
+                            <p>DSI, Secteur Utilities</p>
+                        </div>
+                    </div>
+                </div>
